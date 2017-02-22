@@ -1,16 +1,17 @@
-<p id="notice"><%= notice %></p>
+<p class="alert alert-success" id="notice"><%= notice %></p>
 
 <div class="panel panel-primary">
 
 <div class="panel-heading">cart</div>
 
 <div class="panel-body">
+<p id="notice"><%= notice %></p>
 
-<ul>
-<% @cart.line_items.each do |item| %>
-<li><%= item.product.title %></li>
-<%  end  %>
-</ul>
+<%= render @cart %>
+
+
+<%= button_to 'Empty cart', @cart, method: :delete,
+    data: { confirm: 'Are you sure?' } %>
 
 </div>
 
